@@ -5,7 +5,7 @@
     </head>
     
     <body>
-        <audio src="https://proxy.podcrypt.app/https://freemusicarchive.org/file/music/none_given/TRG_Banks/TRG_Banks_-_Singles/TRG_Banks_-_Fergus_OReilly.mp3" controls></audio>
+        <audio src="https://proxy.podcrypt.app/https://freemusicarchive.org/file/music/none_given/TRG_Banks/TRG_Banks_-_Singles/TRG_Banks_-_Fergus_OReilly.mp3" crossorigin="anonymous" controls></audio>
         <button onclick="download()">Download</button>
         
         <script>
@@ -13,6 +13,8 @@
                 const audioElement = document.querySelector('audio');
                 const audioContext = new AudioContext();
                 const source = audioContext.createMediaElementSource(audioElement);
+            
+                source.connect(audioContext.destination);
             }
             
         

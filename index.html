@@ -13,8 +13,14 @@
                 const audioElement = document.querySelector('audio');
                 const audioContext = new AudioContext();
                 const source = audioContext.createMediaElementSource(audioElement);
+                const offlineAudioContext = new OfflineAudioContext();
             
-                source.connect(audioContext.destination);
+                source.connect(offlineAudioContext.destination);
+                source.start();
+                
+                offlineAudioContext.startRendering.then((buffer) => {
+                    console.log('buffer', buffer);
+                });
             }
             
         

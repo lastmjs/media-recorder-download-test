@@ -6,11 +6,16 @@
     
     <body>
         <audio src="https://freemusicarchive.org/file/music/none_given/TRG_Banks/TRG_Banks_-_Singles/TRG_Banks_-_Fergus_OReilly.mp3" controls></audio>
-    
+        <button onclick="download()">Download</button>
+        
         <script>
-            const audioElement = document.querySelector('audio');
-            const audioContext = new AudioContext();
-            const source = audioContext.createMediaElementSource(audioElement);
+            async function download() {
+                const audioElement = document.querySelector('audio');
+                const audioContext = new AudioContext();
+                const source = audioContext.createMediaElementSource(audioElement);
+            }
+            
+        
         </script>
     </body>
 </html>
